@@ -1,11 +1,24 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { Tabs } from '../components/Tabs';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Research Appendix">
+  <header max-w-3xl mx-auto mb-12>
+    <h1 text-4xl font-bold mb-2>Evolution of Fear and Social Rewards in Prey-Predator Relationship</h1>
+    <p text-xl text-gray-600 mb-6>Yuji Kanagawa and Kenji Doya</p>
+
+    <section bg-white p-6 rounded-lg shadow-sm border border-gray-200>
+      <h2 text-sm uppercase tracking-wider text-gray-400 font-semibold mb-2>Abstract</h2>
+      <p leading-relaxed>
+        Insert your paper abstract here. This appendix provides additional
+        visualizations, raw video footage of agent behavior, and supplementary
+        data links discussed in the main text.
+      </p>
+    </section>
+  </header>
+
+  <main max-w-3xl mx-auto>
+    <Tabs client:load />
+  </main>
 </Layout>
