@@ -8,8 +8,11 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{title}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/inter/index.css">
   </head>
-  <body bg-gray-50 text-gray-900 font-sans p-8>
-    <slot />
+  <body class="bg-slate-50 text-slate-900 font-sans antialiased m-0 p-0">
+    <div class="mx-auto max-w-4xl min-h-screen bg-white shadow-2xl border-x border-slate-100 px-8 md:px-16 py-16">
+      <slot />
+    </div>
   </body>
 </html>

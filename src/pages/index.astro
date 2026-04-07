@@ -3,22 +3,47 @@ import Layout from '../layouts/Layout.astro';
 import { Tabs } from '../components/Tabs';
 ---
 
-<Layout title="Research Appendix">
-  <header max-w-3xl mx-auto mb-12>
-    <h1 text-4xl font-bold mb-2>Evolution of Fear and Social Rewards in Prey-Predator Relationship</h1>
-    <p text-xl text-gray-600 mb-6>Yuji Kanagawa and Kenji Doya</p>
+<Layout title="Fear Evolution: GECCO 2026">
+  <header class="flex flex-col items-center text-center mb-16">
+    <h1 class="text-5xl font-black tracking-tight leading-tight mb-6 max-w-2xl">
+      Evolution of Fear and Social Rewards in Prey-Predator Relationship
+    </h1>
 
-    <section bg-white p-6 rounded-lg shadow-sm border border-gray-200>
-      <h2 text-sm uppercase tracking-wider text-gray-400 font-semibold mb-2>Abstract</h2>
-      <p leading-relaxed>
-        Insert your paper abstract here. This appendix provides additional
-        visualizations, raw video footage of agent behavior, and supplementary
-        data links discussed in the main text.
-      </p>
-    </section>
+    <div class="text-lg text-slate-600 mb-8 space-x-4">
+      <span class="font-semibold">Yuji Kanagawa and Kenji Doya</span>
+      <span class="text-slate-300">|</span>
+      <span class="text-slate-500 italic">GECCO 2026 Poster Presentation</span>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-3 mb-12">
+      <a
+        href="https://arxiv.org/abs/2507.09992"
+        target="_blank"
+        class="px-6 py-2.5 bg-slate-900 text-white rounded-full text-sm font-bold hover:bg-slate-600 transition shadow-md"
+      >
+        arXiv
+      </a>
+      <a
+        href="https://github.com/oist/emevo"
+        target="_blank"
+        class="px-6 py-2.5 bg-slate-900 text-white rounded-full text-sm font-bold hover:bg-slate-600 transition shadow-md"
+      >
+        GitHub
+      </a>
+    </div>
+    <div class="w-full aspect-video bg-slate-100 rounded-3xl overflow-hidden shadow-inner border border-slate-100">
+      <img
+        src="/images/teaser-main.png"
+        alt="Simulation Teaser"
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <p class="mt-4 text-sm text-slate-400 italic">
+      Teaser: teaser text
+    </p>
   </header>
 
-  <main max-w-3xl mx-auto>
+  <main>
     <Tabs client:load />
   </main>
 </Layout>
