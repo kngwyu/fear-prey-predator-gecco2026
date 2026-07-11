@@ -1,4 +1,8 @@
-import { useState } from 'react';
+import { useState } from 'react'
+import ppCum from '../assets/pp-cum.png';
+import ppReg from '../assets/pp-reg.png';
+import treeS1 from '../assets/tree-seed-1.png';
+import ppVideo from '../assets/predator2-crop.mp4';
 
 export function Tabs() {
   const [activeTab, setActiveTab] = useState('abstract');
@@ -7,7 +11,6 @@ export function Tabs() {
     { id: 'abstract', label: 'Abstract' },
     { id: 'figures', label: 'Figures' },
     { id: 'movies', label: 'Movies' },
-    { id: 'links', label: 'Data & Links' }
   ];
 
   return (
@@ -45,12 +48,28 @@ Fear is a critical brain function that enables us to learn to avoid danger. Whil
         {activeTab === 'figures' && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full animate-fade-in">
              <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                <div className="h-48 bg-slate-200 rounded mb-2"></div>
-                <p className="text-xs text-slate-500">Fig 1: Agent Mortality Rate</p>
+               <img
+                 src={ppCum.src}
+                 alt="Average reward weights per time in prey and predators."
+                 className="w-full h-auto block rounded mb-2"
+               />
+               <p className="text-xs text-slate-500">Fig 1: Evolved Rewards</p>
              </div>
              <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                <div className="h-48 bg-slate-200 rounded mb-2"></div>
-                <p className="text-xs text-slate-500">Fig 2: Neural Activation Map</p>
+               <img
+                 src={ppReg.src}
+                 alt="Relationship between predator's prey rewards and prey's predator rewards"
+                 className="w-full h-auto block rounded mb-2"
+               />
+               <p className="text-xs text-slate-500">Fig 2: Relationship between predator's prey rewards and prey's predator rewards.'</p>
+             </div>
+            <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
+               <img
+                 src={treeS1.src}
+                 alt="Phylogenetic tree of prey with seed 1"
+                 className="w-full h-auto block rounded mb-2"
+               />
+                <p className="text-xs text-slate-500">Fig 3: Phylogenetic tree of prey with seed 1.</p>
              </div>
           </div>
         )}
@@ -58,16 +77,11 @@ Fear is a critical brain function that enables us to learn to avoid danger. Whil
         {activeTab === 'movies' && (
           <div className="w-full animate-fade-in flex flex-col items-center">
             <video className="w-full rounded-2xl shadow-xl" controls>
-              <source src="/videos/simulation.mp4" type="video/mp4" />
+              {/* 2. Use the imported variable as the src */}
+              <source src={ppVideo} type="video/mp4" />
+              Your browser does not support the video tag.
             </video>
-            <p className="mt-4 text-slate-500 font-medium italic">Supp. Movie 1: Evolved Avoidance Pattern</p>
-          </div>
-        )}
-
-        {activeTab === 'links' && (
-          <div className="animate-fade-in py-10 text-slate-600">
-            <p className="mb-4">Dataset available upon request.</p>
-            <p className="text-sm">Contact: yuji@example.edu</p>
+            <p className="mt-4 text-slate-500 font-medium italic">Supp. Movie 1: Videos of evolved prey and predators with seed 1. P1 prey agents have positive weights for observing prey and predators and prefer to gather. P2 prey agents have negative weights for observing others, liking solitary behavior more.</p>
           </div>
         )}
       </div>

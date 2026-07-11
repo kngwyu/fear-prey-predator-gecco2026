@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Tabs } from '../components/Tabs';
+import { Image } from 'astro:assets';
+import teaserImage from '../assets/website-teaser.png';
 ---
 
 <Layout title="Fear Evolution: GECCO 2026">
@@ -31,15 +33,16 @@ import { Tabs } from '../components/Tabs';
         GitHub
       </a>
     </div>
-    <div class="w-full aspect-video bg-slate-100 rounded-3xl overflow-hidden shadow-inner border border-slate-100">
-      <img
-        src="/images/teaser-main.png"
+    <div class="w-full bg-slate-100 rounded-3xl overflow-hidden shadow-inner border border-slate-100">
+      <Image
+        src={teaserImage}
         alt="Simulation Teaser"
-        class="w-full h-full object-cover"
+        class="w-full h-auto block"
       />
     </div>
     <p class="mt-4 text-sm text-slate-400 italic">
-      Teaser: teaser text
+      We made a prey-predator simulation where agents learn by reinforcement learning and evolve their reward functions.
+      Modeling fear as a part of the reward function, we investigated what is necessary for fear evolution.
     </p>
   </header>
 

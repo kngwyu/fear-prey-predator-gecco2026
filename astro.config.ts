@@ -4,7 +4,7 @@ import unocss from 'unocss/astro';
 
 export default defineConfig({
   // In 2026, GitHub Pages needs this if your repo isn't 'username.github.io'
-  site: 'https://astronaut.github.io',
+  site: 'https://kngwyu.github.io',
   base: 'fear-prey-predator-gecco2026',
   integrations: [
     react(),
